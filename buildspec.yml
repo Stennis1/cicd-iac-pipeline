@@ -1,0 +1,13 @@
+version: 0.2
+
+phases: 
+  install:
+    commands:
+      - echo Installing dependencies...
+  build:
+    commands:
+      - echo Building static website later on S3...
+
+artifacts:
+  files:
+    - '**/*'
