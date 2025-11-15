@@ -9,10 +9,9 @@ phases:
     commands:
       - echo "Deploying CloudFormation stack for S3 bucket..."
       - >
-        aws cloudformation deploy \
-        --template-file cloudformation-template.yml \
-        --stack-name static-site-s3-bucket \
-        --capabilities CAPABILITY_NAMED_IAM \
+        aws cloudformation deploy 
+        --template-file cloudformation-template.yml 
+        --stack-name static-site-s3-bucket 
         --region $AWS_REGION
 
 artifacts:
