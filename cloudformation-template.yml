@@ -5,5 +5,5 @@ Resources:
   StaticWebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: "${AWS::StackName}-009-001"
-      AccessControl: PublicRead
+      BucketName: !Sub "${AWS::StackName}-${AWS::AccountId}-${AWS::Region}"
+      AccessControl: Private
