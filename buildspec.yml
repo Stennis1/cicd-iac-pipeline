@@ -4,9 +4,16 @@ phases:
   install:
     commands:
       - echo Installing dependencies...
+
   build:
     commands:
-      - echo Building static website later on S3...
+      - echo "Deploying CloudFormation stack for S3 bucket..."
+      - >
+        aws cloudformation deploy \
+        --template-file cloudformation-template.yml \
+        --stack-name static-site-s3-bucket \
+        --capabilities CAPABILITY_NAMED_IAM \
+        --region $AWS_REGION
 
 artifacts:
   files:
